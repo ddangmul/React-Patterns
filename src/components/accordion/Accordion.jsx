@@ -1,6 +1,8 @@
 import { createContext, useState, useContext } from "react";
 
 import AccordionItem from "./AccordionItem";
+import AccordionTitle from "./AccordionTitle";
+import AccordionContent from "./AccordionContent";
 
 // Accordion과 모든 연관된 컴포넌트를 다룰 컨텍스트라서 여기에 생성
 const AccordionContext = createContext();
@@ -42,3 +44,5 @@ export default function Accordion({ children, className }) {
 // [컴파운드 컴포넌트 그룹화]
 // JS에서 함수는 곧 객체이므로 함수명(=객체명).속성명 으로 속성 추가
 Accordion.Item = AccordionItem;
+Accordion.Title = AccordionTitle;
+Accordion.Content = AccordionContent;
