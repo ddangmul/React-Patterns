@@ -21,19 +21,13 @@ export function useAccordionContext() {
 export default function Accordion({ children, className }) {
   const [openItemId, setOpenItemId] = useState();
 
-  function openItem(id) {
-    setOpenItemId(id);
-  }
-
-  function closeItem() {
-    setOpenItemId(null);
+  function toggleItem(id) {
+    setOpenItemId((prevId) => (prevId === id ? null : id));
   }
 
   const contextValue = {
-    // 한번에 한가지 항목만 열리게 하므로 id 저장
     openItemId: openItemId,
-    openItem,
-    closeItem,
+    toggleItem,
   };
 
   return (
